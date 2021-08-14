@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
 <title>Anilimited</title>
 <link rel="icon"
       type="image/png"
@@ -54,13 +53,13 @@
         padding: 10px;
         text-align: center;
     }
-    .butt {
+    .lbtn {
         background-color: #57FAAB;
         border:none;
         padding: 6px;
         border-radius: 4px;
     }
-    .butt:hover{
+    .lbtn:hover{
         background-color: #f3f3f3;
     }
     #abanner {
@@ -77,10 +76,8 @@
     footer div {
         float:right;
     }
-    footer div a {
-        color: grey;
-        font-size: 20px;
-        margin: 2px;
+    footer b:hover {
+text-decoration: underline;
     }
     @media only screen and (max-width: 600px) {
         #mirror1 {
@@ -106,7 +103,7 @@
   <hr>
 
 <div class="d-grid gap-2">
-  <button class="butt" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i> Add to Discord</button>
+  <button class="lbtn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i> Add to Discord</button>
 </div>
 <a href="https://discord.gg/Fg6YDAGmVK">Join the support server!</a>
 </div>
@@ -126,13 +123,11 @@ $( document ).ready(function() {
     </script>
     <script src="info.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <footer>
+<footer>
     @Anilimited<br>
-        <div><a href="https://www.devbio.me/u/geniuz"><i class="fas fa-external-link-alt"></i></a></div>
-    Bot by <b>Insight</b><br>
-    Website by <b>Avi Rana</b>
-    <div><a href="https://www.twitter.com/_AviRana"><i class="fab fa-twitter"></i></a>
-      <a href="https://github.com/Avi-Rana-1718"><i class="fab fa-github"></i></a></div>
+    Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight</b><br>
+    Website by <b onclick="window.location.href='https://www.twitter.com/_AviRana';">Avi Rana</b>
+</footer>
 </footer>
 </body>
 </html>
