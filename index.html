@@ -44,13 +44,17 @@
         background-color: #57FAAB;
         padding: 8px;
     }
+    header a {
+        color:#282828;
+        font-family: 'Manrope', sans-serif;
+    }
     header h4 {
 font-family: 'Manrope', sans-serif;
     }
     header small {
 font-family: 'Sora', sans-serif;
     }
-.butt {
+.lbtn {
         background-color: #282828;
         border:none;
         margin: 10px;
@@ -59,7 +63,7 @@ font-family: 'Sora', sans-serif;
         border-radius: 3px;
 box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     }
-    .butt:hover {
+    .lbtn:hover {
         background-color: #f3f3f3;
         color:#282828;
     }
@@ -79,10 +83,8 @@ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     footer div {
         float:right;
     }
-    footer div a {
-        color: grey;
-        font-size: 20px;
-        margin: 2px;
+    footer b:hover {
+text-decoration: underline;
     }
     #i1 {
         color: #EB4899;
@@ -112,14 +114,15 @@ font-size: 20px;
     </style>
   <body>
       <div id="nav">
-             <h5><img src="https://cdn.discordapp.com/avatars/834085189671452733/f1482552ca863cb480f1ef3d92910ece.png?size=128" alt="logo" /> Anilimited</h5>
+             <h5><img src="logo.png" alt="logo" /> Anilimited</h5>
              </div>
              <br>
 <header class="d-flex justify-content-between align-items-center">
    <div><h4>Watch anime on discord!</h4>
    <small>Enjoy watching your favourite anime in high quality for FREE on your discord server! </small>
    <br>
-   <button class="butt" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i>  Add to Discord</button>
+   <button class="lbtn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i>  Add to Discord</button>
+   <a href="https://discord.gg/Fg6YDAGmVK">Support server</a>
 </div> <div></div>
 </header>
 <div id="perks">
@@ -129,12 +132,12 @@ font-size: 20px;
     <h6><span id="i2"><i class="fas fa-map"></i></span> Easy to use</h6>
     <small>Use the bot to find what you are searching for with just typing a few words.</small>
     <h6><span id="i3"><i class="fas fa-search"></i></span> Episode search</h6>
-    <small>Find the anime episode you are looking for in seconds. It takes about 15 seconds at the most to find the episode of almost any anime you are looking for.</small>
+    <small>Find the anime episode you are looking for in seconds. It takes about 15 seconds at almost to find any anime episode!</small>
 </div>
 <footer>
     @Anilimited<br>
-    Bot by <b>Insight</b><br>
-    Website by <b>Avi Rana</b>
+    Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight</b><br>
+    Website by <b onclick="window.location.href='https://www.twitter.com/_AviRana';">Avi Rana</b>
 </footer>
   </body>
 </html>
