@@ -42,9 +42,7 @@
         padding: 20px;
     }
     #vidinfo {
-        background-color: #fff;
         padding: 7px;
-        color:black;
     }
     #vidinfo p {
         padding: 4px;
@@ -67,9 +65,7 @@
         width: 130px;
     }
     footer {
-
         background-color: #f3f3f3;
-
         padding: 15px;
         text-align: left;
     }
@@ -79,6 +75,16 @@
     footer b:hover {
 text-decoration: underline;
     }
+.rbtn {
+    border-radius:3px;
+    background-color: #f3f3f3;
+    padding:5px;
+    float: right;
+    margin: 5px;
+}
+#wbtn {
+    display: none;
+}
     @media only screen and (max-width: 600px) {
         #mirror1 {
             padding:0px;
@@ -88,10 +94,32 @@ text-decoration: underline;
         }
 }
 </style>
+<script>
+    function dtheme() {
+        document.getElementById("dbtn").style.display="none";
+        
+        document.getElementById("wbtn").style.display="block";
+        document.getElementById("wbtn").style.color="black";
+    document.body.style.backgroundColor = "#282828";
+document.body.style.color = "white";
+document.getElementById("foot").style.backgroundColor = "black";
+    }
+    function ltheme() {
+        document.getElementById("wbtn").style.display="none";
+document.getElementById("dbtn").style.display="block";
+
+    document.body.style.backgroundColor = "#ffffff";
+document.body.style.color = "black";
+document.getElementById("foot").style.backgroundColor = "#f3f3f3";
+    }
+</script>
 <body>
  <div id="nav">
         <h5 onclick="window.location.href='index.html';"><img src="https://cdn.discordapp.com/avatars/834085189671452733/f1482552ca863cb480f1ef3d92910ece.png?size=128" alt="logo" /> Anilimited</h5>
         </div>
+        <br>
+        <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
+                <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
         <br>
          <div id="video"></div>
   <div id="vidinfo">
@@ -101,7 +129,6 @@ text-decoration: underline;
   <br>
   <div id="main">
   <hr>
-
 <div class="d-grid gap-2">
   <button class="lbtn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i> Add to Discord</button>
 </div>
@@ -123,11 +150,10 @@ $( document ).ready(function() {
     </script>
     <script src="info.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<footer>
+<footer id="foot">
     @Anilimited<br>
     Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight</b><br>
     Website by <b onclick="window.location.href='https://www.twitter.com/_AviRana';">Avi Rana</b>
-</footer>
 </footer>
 </body>
 </html>
