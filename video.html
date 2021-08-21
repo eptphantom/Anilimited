@@ -18,11 +18,10 @@
       <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
       <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
    </head>
-
    <style>
-     * {
-       transition: all .5s;
-     }
+      * {
+      transition: all .5s;
+      }
       body {
       padding: 0px;
       margin-top:5px;
@@ -93,7 +92,7 @@
       text-align: center;
       }
       #mirror1 {
-      width: 100vw;
+      width: 100%;
       }
       @media only screen and (max-width: 600px) {
       #vidinfo p {
@@ -109,7 +108,7 @@
           document.getElementById("wbtn").style.color="black";
       document.body.style.backgroundColor = "#282828";
       document.body.style.color = "white";
-      document.getElementById("foot").style.backgroundColor = "black";
+      document.getElementById("foot").style.backgroundColor = "rgb(40, 40, 40)";
       }
       function ltheme() {
           document.getElementById("wbtn").style.display="none";
@@ -119,13 +118,17 @@
       document.body.style.color = "black";
       document.getElementById("foot").style.backgroundColor = "#f3f3f3";
       }
-
+      this.isVideoLoaded = false;         
+      function checkVideoLoaded(){
+        this.isVideoLoaded = true;
+      }
+      
    </script>
    <body>
       <div id="nav">
          <h5 onclick="window.location.href='index.html';"><img src="https://cdn.discordapp.com/avatars/834085189671452733/f1482552ca863cb480f1ef3d92910ece.png?size=128" alt="logo" /> Anilimited</h5>
-      <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
-      <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
+         <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
+         <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
       </div>
       <div id="video"></div>
       <div id="vidinfo">
@@ -142,6 +145,16 @@
       </div>
       <script>
          $( document ).ready(function() {
+          var element = document.getElementById("mirro1");
+          console.log()
+                $('#mirro1').on('loadstart', function(event) {
+                  $(this).addClass('background');
+                  $(this).attr("poster", "https://cdn.dribbble.com/users/935167/screenshots/2896660/project-loader-colors.gif");
+                });
+                $('#mirror1').on('canplay', function(event) {
+                  $(this).removeClass('background');
+                  $(this).removeAttr("poster");
+                });
                  console.log( "Document loaded!" );
              });
           
@@ -151,7 +164,7 @@
                  var data = url.searchParams.get("data")
                  var decodedData = window.atob(data);
                  var str = decodedData.split(",")
-                 document.getElementById("video").innerHTML = `<video id="mirror1" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;
+                 document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;
              });
       </script>
       <script src="info.js"></script>
