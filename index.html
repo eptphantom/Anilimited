@@ -37,22 +37,19 @@
       padding: 8px;
       display: block;
       font-family: 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
 
       }
       #nav img {
       height: 45px;
       }
       header {
-      height: 90vh;
+      height: 100vh;
       background-color: #57FAAB;
       padding: 8px;
       }
       header a {
       color:#282828;
       font-family: 'Manrope', sans-serif;
-      transition: all .5s;
       }
       header h1 {
       font-family: 'Manrope', sans-serif;
@@ -74,30 +71,43 @@
       .lbtn:hover {
       background-color: #f3f3f3;
       color:#282828;
-      transition: all .5s;
+      transition: all .2s;
       }
       #perks {
-      height: auto;
+          height: 100vh;
       color: black;
       padding: 12px;
       }
-      #perks h6 {
+      
+      #perks div {
+          float: left;
+          display: block;
+          background-color: #f3f3f3;
+          border-radius: 3px;
+          padding: 16px;
+          width: 100%;
+          margin: 5px;
+          transition: all 0.5s;
+      }
+
+      #perks h5 {
       font-family: 'Manrope', sans-serif;
       }
       footer {
       background-color: #f3f3f3;
       padding: 15px;
       text-align: left;
+      display: block;
       }
       footer div {
-      float:right;
       }
       footer b:hover {
       text-decoration: underline;
       }
       #i1 {
       color: #EB4899;
-      padding: 2px;
+      padding: 4px;
+      border-radius: 3px;
       font-size: 20px;
       }
       #i2 {
@@ -110,18 +120,19 @@
       padding: 2px;
       font-size: 20px;
       }
-      .small, small {
-        text-decoration: underline;
+      #i4 {
+          color: #FBB33D;
+          padding: 2px;
+          font-size: 20px;
       }
-      .perks-items {
-        margin-bottom: 2rem;
+      #perks div:hover {
+          padding: 12px;
+  box-shadow: 4px 8px #888888;
+transition: all .5s;
       }
       @media only screen and (max-width: 600px) {
       header {
       height:100vh;
-      }
-      #perks {
-      height: 100vh;
       }
       }
    </style>
@@ -137,27 +148,27 @@
             <button class="lbtn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i>  Add to Discord</button>
             <a href="https://discord.gg/Fg6YDAGmVK">Support server</a>
          </div>
-         <div></div>
       </header>
       <div id="perks">
-         <h5><b>Perks</b></h5>
-         <div class="perks-items">
+         <h5><b>We provide a whole bunch of features that enhance your experience!</b></h5>
+         <div id="id1">
          <h6><span id="i1"><i class="fas fa-ad"></i></span> Ad free</h6>
          <small>Watch anime without any disturbance and without ads!</small>
          </div>
-         <div class="perks-items">
+         <div>
          <h6><span id="i2"><i class="fas fa-map"></i></span> Easy to use</h6>
          <small>Use the bot to find what you are searching for with just typing a few words.</small>
          </div>
-         <div class="perks-items">
+         <div>
          <h6><span id="i3"><i class="fas fa-search"></i></span> Episode search</h6>
          <small>Find the anime episode you are looking for in seconds. It takes about 15 seconds at almost to find any anime episode!</small>
          </div>
-         <div class="perks-items">
-         <h6><span id="i3"><i class="fas fa-video" aria-hidden="true"></i></span>Movie Search</h6>
+         <div>
+         <h6><span id="i4"><i class="fas fa-video" aria-hidden="true"></i></span> Movie Search</h6>
          <small>Anilimited can search for movies in seconds. Some may not be found but there is a good number which can be found.</small>
          </div>
       </div>
+      <br>
       <footer>
          @Anilimited<br>
          Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight</b><br>
