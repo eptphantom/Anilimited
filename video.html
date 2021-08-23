@@ -20,7 +20,7 @@
    </head>
    <style>
       * {
-      transition: all .5s;
+      transition: all .2s;
       }
       body {
       padding: 0px;
@@ -87,7 +87,7 @@
       #wbtn {
       display: none;
       }
-      div#video {
+      #video {
       align-items: center;
       text-align: center;
       }
@@ -145,9 +145,9 @@
       </div>
       <script>
          $( document ).ready(function() {
-          var element = document.getElementById("mirro1");
+          var element = document.getElementById("mirror1");
           console.log()
-                $('#mirro1').on('loadstart', function(event) {
+                $('#mirror1').on('loadstart', function(event) {
                   $(this).addClass('background');
                   $(this).attr("poster", "https://cdn.dribbble.com/users/935167/screenshots/2896660/project-loader-colors.gif");
                 });
@@ -165,6 +165,7 @@
                  var decodedData = window.atob(data);
                  var str = decodedData.split(",")
                  document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;
+                 document.title = " Anilimited | " + url.searchParams.get("title");
              });
       </script>
       <script src="info.js"></script>
