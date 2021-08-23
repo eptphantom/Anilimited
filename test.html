@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Anilimted</title>
+      <title>Anilimited</title>
       <link rel="icon"
          type="image/png"
          href="logo.png">
@@ -87,9 +87,16 @@
       #wbtn {
       display: none;
       }
-      div#video {
+      #video {
       align-items: center;
       text-align: center;
+      }
+      #vidout button {
+          position: absolute;
+          right:10;
+          border:none;
+          background-color: none;
+padding: 5px;
       }
       #mirror1 {
       width: 100%;
@@ -103,7 +110,7 @@
    <script>
       function dtheme() {
           document.getElementById("dbtn").style.display="none";
-
+          
           document.getElementById("wbtn").style.display="block";
           document.getElementById("wbtn").style.color="black";
       document.body.style.backgroundColor = "#282828";
@@ -113,44 +120,32 @@
       function ltheme() {
           document.getElementById("wbtn").style.display="none";
       document.getElementById("dbtn").style.display="block";
-
+      
       document.body.style.backgroundColor = "#ffffff";
       document.body.style.color = "black";
       document.getElementById("foot").style.backgroundColor = "#f3f3f3";
       }
-      this.isVideoLoaded = false;
+      this.isVideoLoaded = false;         
       function checkVideoLoaded(){
         this.isVideoLoaded = true;
       }
-
+      
    </script>
    <body>
       <div id="nav">
-         <h5 onclick="window.location.href='index.html';"><img src="https://cdn.discordapp.com/avatars/834085189671452733/f1482552ca863cb480f1ef3d92910ece.png?size=128" alt="logo" /> Anilimiited</h5>
+         <h5 onclick="window.location.href='index.html';"><img src="https://cdn.discordapp.com/avatars/834085189671452733/f1482552ca863cb480f1ef3d92910ece.png?size=128" alt="logo" /> Anilimited</h5>
          <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
          <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
       </div>
+      <div id ="vidout">
+          <button><i class="fas fa-share-alt"></i></button>
       <div id="video"></div>
+      </div>
       <div id="vidinfo">
          <span id="title"><b></b></span><br>
          Episode <span id="epn"><b></b></span>
       </div>
       <br>
-      <div id="disqus_thread"></div>
-<script>
-
-    var disqus_config = function () {
-this.page.identifier = '/test.html?title=' + url.searchParams.get("title") + '&ep=' +  url.searchParams.get("ep");
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://anilimited.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       <div id="main">
          <hr>
          <div class="d-grid gap-2">
@@ -160,9 +155,9 @@ this.page.identifier = '/test.html?title=' + url.searchParams.get("title") + '&e
       </div>
       <script>
          $( document ).ready(function() {
-          var element = document.getElementById("mirro1");
+          var element = document.getElementById("mirror1");
           console.log()
-                $('#mirro1').on('loadstart', function(event) {
+                $('#mirror1').on('loadstart', function(event) {
                   $(this).addClass('background');
                   $(this).attr("poster", "https://cdn.dribbble.com/users/935167/screenshots/2896660/project-loader-colors.gif");
                 });
@@ -172,7 +167,7 @@ this.page.identifier = '/test.html?title=' + url.searchParams.get("title") + '&e
                 });
                  console.log( "Document loaded!" );
              });
-
+          
              $( window ).on( "load", function() {
                  var url_string = (window.location.href)
          				var url = new URL(url_string);
@@ -189,6 +184,5 @@ this.page.identifier = '/test.html?title=' + url.searchParams.get("title") + '&e
          Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight#0656</b><br>
          Website by <b onclick="window.location.href='https://www.twitter.com/_AviRana';">Avi Rana</b>
       </footer>
-      <script id="dsq-count-scr" src="//anilimited.disqus.com/count.js" async></script>
    </body>
 </html>
