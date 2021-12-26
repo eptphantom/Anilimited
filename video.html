@@ -164,7 +164,9 @@
                  var data = url.searchParams.get("data")
                  var decodedData = window.atob(data);
                  var str = decodedData.split(",")
-                 document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;
+                 if (str[0].includes('.m3u8')) {
+                      document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="application/x-mpegURL"> </video>`;
+                     } else {document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;}
                  document.title = " Anilimited | " + url.searchParams.get("title");
              });
       </script>
