@@ -171,7 +171,7 @@
                  var str = decodedData.split(",")
                  if (str[0].includes('.m3u8')) {
                       document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
-<source type="application/x-mpegURL" src="{str[0]}">
+<source type="application/x-mpegURL" src="${str[0]}">
 </video>`;
                     var player = videojs('mirror1');
 player.play();
