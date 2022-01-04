@@ -95,11 +95,70 @@
       display: none;
       }
       #video {
-      align-items: center;
-      text-align: center;
-      }
-      #mirror1 {
       width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+      }
+      #details {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    z-index:2;
+    left: 10;
+    color:white;
+    text-shadow: 1px 1px 3px black;
+    top:10;
+}
+#center {
+    position:absolute;
+    left:50%;
+    right:50%;
+    top:50%;
+    color:white;
+    text-shadow: 1px 1px 3px black;
+}
+#options {
+    position: absolute;
+    background-color: #282828;
+    opacity: 0.6;
+    z-index: 2;
+    color:white;
+    border-radius: 3px;
+    padding: 10px;
+    right:10;
+    top:10;
+}
+#progress-bar {
+    display: none;
+}
+#bottom-div {
+    position: absolute;
+    bottom: 0;
+    left:10;
+    z-index:2;
+    text-shadow: 0.5px 0.5px 1.5px black;
+}
+#video-div {
+    position:relative;
+    padding: 0;
+    height: max-content;
+    margin: 0;
+    background-color: #26272C;
+    }
+#info {
+    padding: 10px;
+    font-family: 'Manrope', sans-serif;
+}
+.time {
+    font-family: 'Poppins', sans-serif;
+}
+ #mirror1 {
+      width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
       }
       @media only screen and (max-width: 600px) {
       #vidinfo p {
@@ -137,7 +196,28 @@
          <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
          <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
       </div>
+      <div id="video-div">
+      <div id="options">
+        <span class="options" id="openscreen"><span id="fscreenopt" onclick="openFullscreen()"><i class="fas fa-expand"></i></span>
+ <span id="nfscreenopt" onclick="closeFullscreen()"><i class="fas fa-compress"></i></span>
+    </div>
       <div id="video"></div>
+<div id="center">
+        <h1 id="play"><i class="fas fa-play"></i></h1>
+        <h1 id="pause"><i id="pause" class="fas fa-pause"></i></h1>
+    </div>
+    <div id="bottom-div">
+    <div id="time-div" class="time">
+  <time id="time-elapsed">00:00</time>
+  <span> / </span>
+  <time id="duration">00:00</time>
+</div>
+<div id="progress-div" class="video-progress">
+    <progress id="progress-bar" value="0" min="0"></progress>
+  <input class="seek" id="seek" value="0" min="0" type="range" step="1" onmouseover="updateSeekTooltip()">
+</div>
+</div>
+      </div>
       <div id="vidinfo">
          <span id="title"><b>My Hero Academia</b></span><br>
          Episode <span id="epn"><b>2</b></span>
@@ -161,6 +241,7 @@
                 $('#mirror1').on('canplay', function(event) {
                   $(this).removeClass('background');
                   $(this).removeAttr("poster");
+                  $(this).removeAttr("controls);
                 });
                  console.log( "Document loaded!" );
              });
@@ -172,16 +253,17 @@
                  var decodedData = window.atob(data);
                  var str = decodedData.split(",")
                  if (str[0].includes('.m3u8')) {
-                      document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
+                      document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls="false">
 <source type="application/x-mpegURL" src="${str[0]}">
 </video>`;
                     var player = videojs('mirror1');
 player.play();
 
-                     } else {document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;}
+                     } else {document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls="false"><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;}
                  document.title = " Anilimited | " + url.searchParams.get("title");
              });
       </script>
+      <script src="video.js"></video>
       <script src="info.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <footer id="foot">
