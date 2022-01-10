@@ -25,9 +25,6 @@
 
    </head>
    <style>
-      * {
-      transition: all .2s;
-      }
       body {
       padding: 0px;
       margin-top:5px;
@@ -45,10 +42,11 @@
       justify-content: space-between;
       align-items: center;
       }
-      #nav img {
-      height: 45px;
+      #bmain {
+          height: 100%;
       }
-      #mirror1 {
+      #nav img {
+          height: 45px;
       }
       #vidinfo {
       padding: 7px;
@@ -62,18 +60,24 @@
       }
       .lbtn {
       background-color: #57FAAB;
-      border:none;
-      padding: 6px;
+      border: 1px solid black;
+      border-style: dashed;
+      font-family: 'Manrope', sans-serif;
+      padding: 8px;
       border-radius: 4px;
+      transition: 0.1s box-shadow,border-style;
       }
       .lbtn:hover{
       background-color: #f3f3f3;
+      border-style:solid;
+      box-shadow: 4px 4px #282828;
       }
       #abanner {
       border-radius: 4px;
       width: 130px;
       }
       footer {
+      border-top: 0.5px solid #282828;
       background-color: #f3f3f3;
       padding: 15px;
       text-align: left;
@@ -81,7 +85,11 @@
       footer div {
       float:right;
       }
-      footer b:hover {
+      footer a {
+          color:none;
+          text-decoration:none;
+      }
+      footer a:hover {
       text-decoration: underline;
       }
       .rbtn {
@@ -115,6 +123,7 @@
           document.getElementById("wbtn").style.color="black";
       document.body.style.backgroundColor = "#282828";
       document.body.style.color = "white";
+      document.getElementById("foot").style.color ="white";
       document.getElementById("foot").style.backgroundColor = "rgb(40, 40, 40)";
       }
       function ltheme() {
@@ -124,6 +133,8 @@
       document.body.style.backgroundColor = "#f3f3f3";
       document.body.style.color = "black";
       document.getElementById("foot").style.backgroundColor = "#f3f3f3";
+      document.getElementById("foot").style.color ="black";
+      
       }
       this.isVideoLoaded = false;         
       function checkVideoLoaded(){
@@ -137,6 +148,7 @@
          <span id="wbtn" class="rbtn" onclick="ltheme()"><i class="fas fa-sun"></i></span>
          <span id="dbtn" class="rbtn" onclick="dtheme()"><i class="fas fa-moon"></i></span>
       </div>
+      <div id="bmain">
       <div id="video"></div>
       <div id="vidinfo">
          <span id="title"><b>My Hero Academia</b></span><br>
@@ -148,6 +160,7 @@
          <div class="d-grid gap-2">
             <button class="lbtn" onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=834085189671452733&permissions=49152&scope=bot';"><i class="fab fa-discord"></i> Invite to Discord</button>
          </div>
+         <br>
          <a href="https://discord.gg/Fg6YDAGmVK">Join the support server!</a>
       </div>
       <script>
@@ -184,10 +197,11 @@ player.play();
       </script>
       <script src="info.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      </div>
       <footer id="foot">
          @Anilimited<br>
-         Bot by <b onclick="window.location.href='https://www.devbio.me/u/geniuz';">Insight#0656</b><br>
-         Website by <b onclick="window.location.href='https://avi-rana-1718.github.io/';">Avi Rana</b>
+         Bot by <a href="https://www.devbio.me/u/geniuz"><b>Insight#0656</b></a><br>
+         Website by <a href="https://avi-rana-1718.github.io/"><b>Avi Rana</b></a>
       </footer>
    </body>
 </html>
