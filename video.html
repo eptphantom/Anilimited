@@ -224,7 +224,7 @@
           if (sub !== "None") {
             
             document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
-<source type="application/x-mpegURL" src="${str[0]}">
+<source type="application/x-mpegURL" src="${str}">
 <track kind='captions' src='${sub}' srclang='en' label='English' />
 
 </video>`;
@@ -232,12 +232,12 @@
           player.play();
           } else {
             document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
-<source type="application/x-mpegURL" src="${str[0]}">
+<source type="application/x-mpegURL" src="${str}">
 </video>`;
           var player = videojs('mirror1');
           player.play();
           }
-        } else {document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str[0]}" type="video/mp4"> </video>`;}
+        } else {document.getElementById("video").innerHTML = `<video id="mirror1" preload="auto" autoplay="autoplay" controls><source id="mirrorv"src="${str}" type="video/mp4"> </video>`;}
         document.title = " Anilimited | " + url.searchParams.get("title");
       });
     </script>
