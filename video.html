@@ -215,8 +215,8 @@
         var url_string = (window.location.href)
         var url = new URL(url_string);
         var data = url.searchParams.get("data")
-        var decodedData = window.atob(data);
-        var str = decodedData.split(",")
+        var decodedData = b64_to_utf8(data);
+        var str = decodedData
         if (str[0].includes('.m3u8')) {
           var sub =  url.searchParams.get("sub")
           var decodedsub = b64_to_utf8(sub);
