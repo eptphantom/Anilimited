@@ -209,10 +209,8 @@
       });
 
       $(window).on("load", function () {
-        function b64DecodeUnicode(str) {
-    return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-    }).join(''))
+        function b64_to_utf8( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
 }
         var url_string = (window.location.href)
         var url = new URL(url_string);
@@ -221,9 +219,8 @@
         var str = decodedData.split(",")
         if (str[0].includes('.m3u8')) {
           var sub =  url.searchParams.get("sub")
-          var decodedsub = b64DecodeUnicode(sub);
-          console.log(decodedsub)
-          var sub = decodedsub.split(",")[0]
+          var decodedsub = b64_to_utf8(sub);
+          var sub = decodedsub
           if (sub !== "None") {
             
             document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
