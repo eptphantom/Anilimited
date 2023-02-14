@@ -209,6 +209,11 @@
       });
 
       $(window).on("load", function () {
+        function b64DecodeUnicode(str) {
+    return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+    }).join(''))
+}
         var url_string = (window.location.href)
         var url = new URL(url_string);
         var data = url.searchParams.get("data")
@@ -216,7 +221,8 @@
         var str = decodedData.split(",")
         if (str[0].includes('.m3u8')) {
           var sub =  url.searchParams.get("sub")
-          var decodedsub = window.atob(sub);
+          var decodedsub = b64DecodeUnicode(sub);
+          console.log(decodedsub)
           var sub = decodedsub.split(",")[0]
           if (sub !== "None") {
             
