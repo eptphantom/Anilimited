@@ -219,15 +219,15 @@
         var str = decodedData
         if (str.includes('.m3u8')) {
           var sub =  url.searchParams.get("sub")
-          var decodedsub = b64_to_utf8(sub);
-          var sub = decodedsub
-          if (sub !== "None") {
-            
+          if (sub != null) {
+            var decodedsub = b64_to_utf8(sub);
+            var sub = decodedsub
+            if (sub !== "None") {
             document.getElementById("video").innerHTML = `<video id="mirror1"  class="video-js vjs-default-skin" controls>
 <source type="application/x-mpegURL" src="${str}">
 <track kind='captions' src='${sub}' srclang='en' label='English' />
 
-</video>`;
+</video>`}
           var player = videojs('mirror1');
           player.play();
           } else {
